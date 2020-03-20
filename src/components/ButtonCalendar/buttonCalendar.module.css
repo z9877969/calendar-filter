@@ -1,0 +1,46 @@
+.btnRefresh,
+.btnEsc {
+  width: 130px;
+  height: 45px;
+
+  background: #ffffff;
+
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 7px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.btnRefresh {
+  background: rgba(255, 116, 57, 0.5);
+  border: none;
+  color: #ffffff;
+}
+
+.btnEsc,
+.btnEsc,
+.btnEsc:hover,
+.btnEsc:active,
+.btnRefresh,
+.btnRefresh:hover,
+.btnRefresh:active {
+  outline: none;
+}
+
+.btnEsc:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.btnRefreshActive {
+  background: #ff7439;
+}
+
+.btnRefreshActive:hover {
+  background: #f16e36;
+}

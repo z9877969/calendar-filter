@@ -1,0 +1,144 @@
+.container {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 15px 10px 22px;
+  width: 288px;
+  height: 210px;
+  background: #f3f8fd;
+}
+
+.listWeekDaysLess,
+.listWeekDaysMore,
+.listMonthDaysLess,
+.listMonthDaysMore,
+.weekDates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listWeekDaysLess,
+.listWeekDaysMore {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listWeekDaysLess {
+  margin-bottom: 8.5px;
+}
+
+.listWeekDaysMore {
+  margin-bottom: 4.5px;
+}
+
+.weekDay {
+  width: 23px;
+  height: 17px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+
+.listMonthDaysLess,
+.listMonthDaysMore {
+  display: flex;
+  flex-direction: column;
+}
+
+.listMonthDaysLess > li {
+  /* margin-bottom: 8.5px; */
+}
+
+.listMonthDaysMore > li {
+  /* margin-bottom: 4.5px; */
+}
+
+.weekDates {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+  text-align: center;
+  cursor: default;
+}
+
+.dateMarked {
+  position: relative;
+  /* background: rgba(255, 116, 57, 0.2); */
+}
+
+.dateMarked::after,
+.dateMarked::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 28px;
+  top: 0;
+  /* left: 14px; */
+  background-color: rgba(255, 116, 57, 0.2);
+  /* z-index: 5; */
+}
+
+.dateMarked::before {
+  right: 14px;
+}
+.dateMarked::after {
+  left: 14px;
+}
+
+.dateMarked:last-child::after {
+  width: 24px;
+}
+.dateMarked:first-child::before {
+  width: 24px;
+}
+
+.dateActiveFirst,
+.dateActiveLast,
+.dateRandom {
+  background: #ff7439;
+}
+
+.dateActiveFirst:first-child::after,
+.dateActiveLast:last-child::before,
+.dateActiveFirst::after,
+.dateActiveLast::before {
+  width: 0;
+  height: 0;
+}
+
+.dateNotMonth {
+  opacity: 0.2;
+}
+
+.date:hover {
+  background: #e5e5e5;
+}
+
+.date:active {
+  background: #ff7439;
+}
+
+.dateRandom:hover {
+  background: #ff7439;
+}

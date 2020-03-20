@@ -1,0 +1,44 @@
+.container {
+  width: 258px;
+  height: 57px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrowBtn {
+  width: 23.55px;
+  height: 23.5px;
+  border-radius: 12.77px;
+  background: #fff;
+  border: 2px solid #000000;
+}
+
+.arrowBtn,
+.arrowBtn:hover,
+.arrowBtn:active {
+  outline: none;
+}
+
+.left {
+  background: url(../../assets/png/arrow-left.png);
+}
+
+.right {
+  background: url(../../assets/png/arrow-right.png);
+}
+
+.left,
+.right {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.month {
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+}

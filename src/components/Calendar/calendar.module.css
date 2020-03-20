@@ -1,0 +1,15 @@
+.container {
+  width: 288px;
+  height: 332px;
+
+  background: #ffffff;
+  box-shadow: 0px 10px 40px rgba(128, 158, 191, 0.2);
+  border-radius: 10px;
+}
+
+.btnContainer {
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
