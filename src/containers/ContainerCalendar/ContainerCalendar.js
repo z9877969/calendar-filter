@@ -18,7 +18,7 @@ const periodsMap = [
   ["all_time"],
   ["today", 0],
   ["yestarday", 1],
-  ["last_7", 7],
+  ["last_7", 6],
   ["last_30", 30],
   ["now_month", dateNow[2] - 1],
   ["last_month", null]
