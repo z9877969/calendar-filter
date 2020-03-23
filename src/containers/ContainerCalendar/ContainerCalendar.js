@@ -20,7 +20,7 @@ const periodsMap = [
   ["yestarday", 1],
   ["last_7", 7],
   ["last_30", 30],
-  ["now_month", 1 - dateNow[2]],
+  ["now_month", dateNow[2] - 1],
   ["last_month", null]
 ];
 

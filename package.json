@@ -6,7 +6,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "gh-pages": "^2.2.0",
     "moment": "^2.24.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -35,6 +34,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "@babel/compat-data": "~7.8.0"
   },
   "homepage": "https://z9877969.github.io/calendar-filter/"
 }
