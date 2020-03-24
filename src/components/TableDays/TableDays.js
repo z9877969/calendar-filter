@@ -13,9 +13,6 @@ const TableDays = ({
   getPeriodDate
 }) => {
   const tableDates = getTableMonthData(activeMonth, datesArr);
-
-  // const randomDates = [...randomPeriodDates].map(date => getDateObj(date));
-
   const getMarkedDates = () => {
     const markedArr = markedDatesArr
       .filter(markedDate => datesArr.find(date => markedDate.id === date[0].id))
@@ -26,12 +23,10 @@ const TableDays = ({
     setObj.firstDate = markedDatesArr.length > 0 && markedDatesArr[0].id;
     setObj.lastDate =
       markedDatesArr.length > 0 && markedDatesArr[markedDatesArr.length - 1].id;
-    // console.log("setObj", setObj);
     return setObj;
   };
 
   const setPeriod = getMarkedDates();
-
   return (
     <div className={css.container}>
       <ul
