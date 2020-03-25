@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  background: #f0f6fc;
+}
+
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
+  width: 1920px;
+  padding: 100px 38px;
 }

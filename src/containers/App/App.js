@@ -5,8 +5,8 @@ import css from "./App.module.css";
 
 const App = () => (
   <div className={css.container}>
-    <ExpertPageContainer />
     <ContainerCalendar />
+    <ExpertPageContainer />
   </div>
 );
 
