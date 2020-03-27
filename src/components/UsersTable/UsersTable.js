@@ -1,5 +1,5 @@
 import React from "react";
-import users from "../../json/users.json";
+import users from "../../constants/users.json";
 import css from "./usersTable.module.css";
 
 console.log("users", users);
