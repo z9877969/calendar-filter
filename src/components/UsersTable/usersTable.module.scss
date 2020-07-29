@@ -1,0 +1,182 @@
+@import "../../styles/mixins";
+
+.table {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.headerRow {
+  display: flex;
+  padding-bottom: 16px;
+  margin-bottom: 21px;
+  border-bottom: 1px solid #e7ecf1;
+}
+
+.headerItem {
+  @include flex(start, center);
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 130%;
+  color: #000000;
+
+  &:last-child {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.bodyList li {
+  margin-bottom: 11px;
+}
+
+.headerItem:nth-child(n + 2),
+.bodyRow li:nth-child(n + 2) {
+  width: 188px;
+}
+
+.checkboxItem {
+  position: relative;
+  width: 26px;
+  margin-right: 38px;
+  display: flex;
+  align-items: center;
+
+  & input {
+    position: absolute;
+    left: 40px;
+    opacity: 0;
+    z-index: -5;
+  }
+}
+
+.checkboxLabel {
+  position: relative;
+
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(131, 142, 157, 0.3);
+  border-radius: 26px;
+}
+
+.checkboxActive {
+  display: none;
+  font-size: 0;
+}
+
+input:checked + .checkboxLabel > .checkboxActive {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: rgba(131, 142, 157, 0.5);
+}
+
+.bodyRow {
+  display: flex;
+  justify-content: start;
+}
+
+.bodyItem {
+  @include flex(start, center);
+}
+
+.bodyItem,
+.user,
+.email {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lock {
+  display: inline-block;
+  width: 12px;
+  height: 17px;
+  margin-right: 7px;
+  background-image: url(../../assets/svg/lock.svg);
+  @include bg-position(center, center);
+  font-size: 0;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.email {
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.lockText {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.lastAction,
+.product {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.lastAction::after,
+.product::after {
+  position: absolute;
+  content: "";
+  width: 84px;
+  height: 47px;
+  top: 0;
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    #ffffff 53.27%,
+    rgba(255, 255, 255, 0) 115.44%
+  );
+  z-index: 10;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  @include bg-position(center, center);
+
+  &:hover svg path {
+    @include hover(fill, var(--primary-orange));
+  }
+
+  &:first-child {
+    margin-right: 25px;
+  }
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  outline: none;
+  cursor: pointer;
+}

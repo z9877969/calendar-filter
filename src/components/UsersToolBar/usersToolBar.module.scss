@@ -1,0 +1,153 @@
+@import "../../styles/mixins";
+
+.container {
+  @include box-size(1269px, 85px, 0 0 10px, 0 21px 0 35px);
+  @include flex(space-between, center);
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.filtersContainer {
+  position: relative;
+  min-width: 400px;
+  @include flex(space-between, center);
+}
+
+.btnPeriod {
+  @include box-size(unset, 40px, 0 30px 0 0, 0 30px 0 0);
+  min-width: 138px;
+  @include flex(space-between, flex-start);
+  background-image: url(../../assets/svg/arrow-down.svg);
+  background-color: #fff;
+  @include bg-position(right 10px, center);
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #000000;
+
+  & svg {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    @include hover(color, var(--primary-orange));
+
+    & svg path {
+      @include hover(fill, var(--primary-orange));
+    }
+  }
+}
+
+.filterWrapper {
+  min-width: 138px;
+  @include flex(space-between, center);
+
+  & svg {
+    margin-right: 20px;
+  }
+
+  &:hover svg path {
+    @include hover(fill, var(--primary-orange));
+  }
+}
+
+.periodContainer {
+  @include flex(justify-content, center);
+  position: absolute;
+  left: 0;
+  top: calc(100% - 2px);
+  background-color: #000;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
+.firstDate,
+.lastDate {
+  @include flex(justify-content, center);
+}
+
+.firstDate,
+.lastDate,
+.symbolTo {
+  margin-right: 10px;
+}
+
+.date,
+.month {
+  margin-right: 10px;
+}
+
+// .symbolTo {
+//   margin: 0 5px;
+// }
+
+.periodClose {
+  position: relative;
+  width: 10px;
+  height: 15px;
+
+  border-radius: 8px;
+  background-color: #fff;
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover svg path {
+    @include hover(fill, var(--primary-orange));
+  }
+}
+
+.btnContainer {
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 7px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 150%;
+
+  &:first-child {
+    width: 120px;
+    height: 45px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+
+    &:hover {
+      @include hover(background-color, #000);
+      @include hover(color, #fff);
+    }
+  }
+
+  &:last-child {
+    width: 199px;
+    height: 45px;
+    background: var(--primary-orange);
+    border: none;
+    color: #ffffff;
+
+    &:hover {
+      @include hover(background-color, var(--hover-orange));
+    }
+  }
+}
+
+.btn,
+.btn:hover,
+.btn:active {
+  outline: none;
+  cursor: pointer;
+}

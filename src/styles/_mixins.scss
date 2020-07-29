@@ -1,0 +1,38 @@
+@mixin bg-position($_posX, $_posY) {
+  background-repeat: no-repeat;
+  background-position: $_posX $_posY;
+}
+
+@mixin box-size($_W, $_H, $_M, $_P) {
+  width: $_W;
+  height: $_H;
+  margin: $_M;
+  padding: $_P;
+}
+
+@mixin flex($_just-cont, $_align-item) {
+  display: flex;
+  justify-content: $_just-cont;
+  align-items: $_align-item;
+}
+
+@mixin arrow_select() {
+  width: 12px;
+  height: auto;
+}
+
+@mixin hover($_property, $_toValue) {
+  #{$_property}: $_toValue;
+  transition: #{$_property} 0.3s linear;
+  cursor: pointer;
+}
+
+@mixin selectContainer($_width, $_height, $_marg-bot, $_bg-col) {
+  position: relative;
+  width: $_width;
+  height: $_height;
+  margin-bottom: $_marg-bot;
+  // background: $_bg-col;
+  border-radius: 10px;
+  box-shadow: 0px 10px 40px rgba(128, 158, 191, 0.2);
+}

@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -17,8 +19,7 @@
   width: 84px;
   height: 15px;
   background: url(../../assets/png/OJOWO.png);
-  background-repeat: no-repeat;
-  background-position: center;
+  @include bg-position(center, center);
 }
 
 .logo span:last-child {
@@ -43,8 +44,8 @@
   margin: 0;
   border-radius: 43px;
   background: url(../../assets/png/bell.png), #fff;
-  background-repeat: no-repeat;
-  background-position: center;
+  @include bg-position(center, center);
+  font-size: 0;
 }
 
 .userSelect {
@@ -59,51 +60,13 @@
   border-radius: 22px;
 }
 
-.userName {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  color: #000000;
-}
-
-.btnSelect {
-  width: 11px;
-  height: 6px;
-  background: none;
-  background: url(../../assets/png/arrow-down.png);
-  border: none;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.btnSelect,
-.btnSelect:hover,
-.btnSelect:active {
-  outline: none;
-  cursor: pointer;
-}
-
 .search {
   width: 43px;
   height: 43px;
   background: url(../../assets/png/loup.png), rgba(203, 215, 228, 0.4);
-  background-repeat: no-repeat;
-  background-position: center;
+  @include bg-position(center, center);
   border-radius: 22px;
-}
-
-.language {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 64px;
-  height: 43px;
-  padding: 0 14px;
-  background: rgba(203, 215, 228, 0.4);
-  border-radius: 22px;
+  font-size: 0;
 }
 
 .languageName {
@@ -112,9 +75,6 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
-  /* identical to box height */
-
   text-align: center;
-
   color: #000000;
 }

@@ -1,32 +1,33 @@
 import React from "react";
 import shortid from "shortid";
-import { getTableMonthData, getDateObj } from "../../helpers/helperCalendar";
+import {
+  getTableMonthDatas,
+  getAllMarkedDates,
+} from "../../helpers/helperCalendar";
 import css from "./tableDays.module.css";
 
 const weekDays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 
-const TableDays = ({
-  datesArr,
-  activeMonth,
-  markedDatesArr,
-  randomDates,
-  getPeriodDate
-}) => {
-  const tableDates = getTableMonthData(activeMonth, datesArr);
+const TableDays = ({ datesArr, checkedDates, randomDates }) => {
+  const tableDates = getTableMonthDatas(datesArr);
+  const markedDatesArr =
+    checkedDates.length > 0 ? getAllMarkedDates(...checkedDates) : checkedDates;
   const getMarkedDates = () => {
     const markedArr = markedDatesArr
-      .filter(markedDate => datesArr.find(date => markedDate.id === date[0].id))
-      .map(date => date.id);
+      .filter((markedDate) =>
+        datesArr.find((date) => markedDate.id === date.dateObj.id)
+      )
+      .map((date) => date.id);
 
     const setObj = {};
     setObj.markedArr = markedArr;
-    setObj.firstDate = markedDatesArr.length > 0 && markedDatesArr[0].id;
-    setObj.lastDate =
+    setObj.firstMarkedId = markedDatesArr.length > 0 && markedDatesArr[0].id;
+    setObj.lastMarkedId =
       markedDatesArr.length > 0 && markedDatesArr[markedDatesArr.length - 1].id;
     return setObj;
   };
 
-  const setPeriod = getMarkedDates();
+  const setPeriod = checkedDates && getMarkedDates();
   return (
     <div className={css.container}>
       <ul
@@ -34,7 +35,7 @@ const TableDays = ({
           tableDates.length < 6 ? css.listWeekDaysLess : css.listWeekDaysMore
         }
       >
-        {[...weekDays].map(day => (
+        {[...weekDays].map((day) => (
           <li key={shortid.generate()} className={css.weekDay}>
             {day}
           </li>
@@ -45,33 +46,45 @@ const TableDays = ({
           tableDates.length < 6 ? css.listMonthDaysLess : css.listMonthDaysMore
         }
       >
-        {[...tableDates].map(weekDates => (
+        {[...tableDates].map((weekDates) => (
           <li key={shortid.generate()}>
             <ul className={css.weekDates}>
-              {[...weekDates].map(date => (
-                <li
-                  className={`${css.date} ${!date[1] &&
-                    css.dateNotMonth} ${date[0].id === setPeriod.firstDate &&
-                    css.dateActiveFirst} ${date[0].id === setPeriod.lastDate &&
-                    css.dateActiveLast}
-                    ${setPeriod.markedArr.includes(date[0].id) &&
-                      css.dateMarked}
-                      ${(randomDates.length > 0 &&
-                        randomDates[0].id === date[0].id &&
-                        randomDates[0].toggle &&
-                        css.dateRandom) ||
-                        (randomDates.length > 1 &&
-                          randomDates[1].id === date[0].id &&
-                          randomDates[1].toggle &&
-                          css.dateRandom)}
+              {[...weekDates].map((date) => {
+                const { dateObj, isThisMonth } = date;
+                const [first, last] = randomDates;
+                return (
+                  <li
+                    className={`${css.date} ${
+                      !isThisMonth && css.dateNotMonth
+                    } ${
+                      dateObj.id === setPeriod.lastMarkedId &&
+                      css.dateActiveFirst
+                    } ${
+                      dateObj.id === setPeriod.firstMarkedId &&
+                      css.dateActiveLast
+                    }
+                    ${
+                      setPeriod.markedArr.includes(dateObj.id) && css.dateMarked
+                    }
+                      ${
+                        (first &&
+                          first.id === dateObj.id &&
+                          first.toggle &&
+                          css.dateRandom) ||
+                        (last &&
+                          last.id === dateObj.id &&
+                          last.toggle &&
+                          css.dateRandom)
+                      }
                       `}
-                  onClick={getPeriodDate}
-                  data-id={date[0].id}
-                  key={date[0].id}
-                >
-                  {date[0].monthDay}
-                </li>
-              ))}
+                    data-id={dateObj.id}
+                    data-info="date"
+                    key={dateObj.id}
+                  >
+                    {dateObj.monthDay}
+                  </li>
+                );
+              })}
             </ul>
           </li>
         ))}

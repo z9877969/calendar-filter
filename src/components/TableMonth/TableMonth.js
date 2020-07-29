@@ -1,20 +1,6 @@
 import React from "react";
-import css from "./tableMonth.module.css";
-
-const monthMap = [
-  "Январь",
-  "Февраль",
-  "Март",
-  "Апрель",
-  "Май",
-  "Июнь",
-  "Июль",
-  "Август",
-  "Сентябрь",
-  "Октябрь",
-  "Ноярь",
-  "Декабрь"
-];
+import { monthMap } from "../../constants/constants";
+import css from "./tableMonth.module.scss";
 
 const TableMonth = ({ date, monthChange }) => {
   const [month, year] = date;

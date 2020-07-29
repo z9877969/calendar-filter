@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+
+.select {
+  @include box-size(177px, 54px, unset, 0 23px 0 20px);
+  border-radius: 10px;
+  border: none;
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 25px;
+  background-image: url(../../assets/svg/arrow-down.svg);
+  @include bg-position(right 19px, center);
+}
+
+.select:hover {
+  @include hover(color, var(--primary-orange));
+}
+
+.option {
+  height: 50px;
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.option:nth-child(n) {
+  color: var(--primary-text-color);
+}

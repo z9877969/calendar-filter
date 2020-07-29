@@ -1,0 +1,87 @@
+@import "../../styles/_mixins.scss";
+
+.container {
+  margin-right: 104px;
+}
+
+.selectContainer {
+  @include selectContainer(231px, 54px, 11px, #fff);
+  background-image: url(../../assets/svg/bread.svg);
+  @include bg-position(right 16px, center);
+}
+
+.menuList {
+  @include box-size(177px, 847px, 0 0 10px, 10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #ffffff;
+  box-shadow: 0px 10px 40px rgba(128, 158, 191, 0.2);
+  border-radius: 10px;
+}
+
+.menuList:nth-last-child() {
+  margin-bottom: 8px;
+}
+
+.menuItem {
+  @include box-size(158px, 85px, 0, 22px 0 11px);
+
+  background: var(--bg-block-color);
+  border: 1px solid #e7ecf1;
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+svg path {
+  fill: #000;
+}
+
+.menuItem span {
+  width: 124 px;
+  height: 19px;
+  left: 99px;
+  top: 323px;
+
+  font-family: PT Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 19px;
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+.menuItem:hover .icon path {
+  fill: var(--primary-orange);
+  transition: fill 0.3s linear;
+}
+
+.menuItem:hover span {
+  color: var(--primary-orange);
+  transition: color 0.2s linear;
+}
+
+.menuItem:hover {
+  border: 1px solid var(--primary-orange);
+  transition: border-color 0.3s linear;
+}
+
+svg:hover path {
+  transition: fill 0.3s linear;
+}
+
+.menuItemActive {
+  border: 1px solid var(--primary-orange);
+}
+.menuItemActive span {
+  color: var(--primary-orange);
+}
+.menuItemActive .icon path {
+  fill: var(--primary-orange);
+}

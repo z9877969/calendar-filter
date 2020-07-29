@@ -1,0 +1,20 @@
+@import "../../styles/mixins";
+
+.select {
+  @include box-size(131px, 40px, 0, 0 30px 0 0);
+  @include flex(space-between, center);
+  background-image: url(../../assets/svg/arrow-down.svg);
+  background-color: #fff;
+  @include bg-position(right 10px, center);
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+  color: #000000;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

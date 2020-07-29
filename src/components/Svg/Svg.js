@@ -2,8 +2,8 @@ import React from "react";
 import svg from "../../constants/spriteSvg";
 
 const svgSet = id => svg[id].split(">");
-console.log("svgSet", svgSet("analitycs"));
-console.log("svg", svg);
+// console.log("svgSet", svgSet("analitycs"));
+// console.log("svg", svg);
 
 const Svg = ({
   className = "",

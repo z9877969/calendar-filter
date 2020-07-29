@@ -1,0 +1,34 @@
+@import "../../styles/mixins";
+
+.select {
+  @include box-size(64px, 43px, unset, 0 14px);
+  @include bg-position(right 14px, center);
+  background-image: url(../../assets/svg/arrow-down.svg);
+  text-align: center;
+  background-color: rgba(203, 215, 228, 0.4);
+  border-radius: 22px;
+  border: none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.select:hover {
+  @include hover(color, var(--primary-orange));
+}
+
+.select .option {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: unset;
+}
+
+.select:hover option {
+  color: var(--primary-text-color);
+}

@@ -6,11 +6,13 @@ import css from "./calendar.module.css";
 
 const Calendar = ({
   handleMonthChange,
+  handlePeriodInfo,
   datesArr,
+  checkedDates,
   activeMonth,
-  markedDatesArr,
+  handleActivePeriod,
   getPeriodDate,
-  randomDates
+  randomDates,
 }) => {
   return (
     <div className={css.container}>
@@ -21,17 +23,18 @@ const Calendar = ({
       {datesArr && datesArr.length > 0 && (
         <TableDays
           datesArr={datesArr}
+          checkedDates={checkedDates}
           activeMonth={activeMonth}
-          markedDatesArr={markedDatesArr}
+          // markedDatesArr={markedDatesArr}
           randomDates={randomDates}
-          getPeriodDate={getPeriodDate}
         />
       )}
       <div className={css.btnContainer}>
-        <ButtonCalendar titleSet={["Отмена", "esc"]} />
+        <ButtonCalendar titleSet={["Отмена", "close-modal"]} />
         <ButtonCalendar
           titleSet={["Обновить", "refresh"]}
-          markedDatesArr={markedDatesArr}
+          markedDatesArr={checkedDates}
+          handler={handleActivePeriod}
         />
       </div>
     </div>
